@@ -1,11 +1,14 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-				+icon('telegram')
-				+iconC('telegram')
-			.row
-						
+		+e.container.container
+			+e.row.row
+				.col-lg
+					h1 We#[+img('img/svg/titleLogo.svg')]create<br>digital products#[+img('img/title-img-2.png')]
+				.col-lg-auto.ms-lg-auto
+					p Specialized in&nbsp;UX/UI Design, Development, Promotion and Sales
+			+e.footer-row.row
+				.col-auto: span Our work
+				.col-auto.d-none.d-lg-block: +e.scroll(href='#') Scroll
+				.col-auto.d-none.d-lg-block: +e.email(href='mailto:info@pera.global') info@pera.global
 	// end headerBlock

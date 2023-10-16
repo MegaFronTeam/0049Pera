@@ -9,7 +9,7 @@
 	height: 100%;
 	background-position: center 0;
 	opacity: 0;
-	opacity: 0;
+	// height: 15000px;
 	// opacity: 0.7;
 } 
 
@@ -24,6 +24,7 @@ html{
 }
 
 body {
+	z-index: 1;
 	&[class*="fixed"],
 	&.fancybox-active{
 		.header{ 
@@ -93,6 +94,20 @@ body {
 			opacity: 0.76;
 		}
 	}
+	// &::after {
+	//   height: rem(10);
+  //   width: rem(10);
+	// 	 background-color: #fff;
+  //   border-radius: 50%;
+  //   content: "";
+  //   left: 0;
+  //   margin-left: #{rem(-5)};
+  //   margin-top: #{rem(-5)};
+  //   position: fixed;
+  //   top: 0;
+  //   transform: translate3d(var(--x,0),var(--y,0),0);
+  //   z-index: -1;
+	// }
 }
 
 .main-wrapper { 
@@ -110,6 +125,10 @@ body {
 }
 main{
 	flex-grow: 1;
+	padding-top: rem(80);
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(104);
+	}
 }
 // .main-wrapper__inner{
 // 	// overflow-x: hidden;
@@ -403,6 +422,28 @@ img.img-bg,
 
 a {
 	@include mt;
+
+	display: block;
+	// padding: 0 calc(var(--bs-gutter-x) / 2);
+	position: relative;
+	overflow: hidden;
+	&:hover {
+		&:after {
+			transform: translateX(0);
+		}
+	}
+	&:after {
+		@include mt;
+		content: '';
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 1px;
+		left: 0;
+		bottom: 0;
+		background-color: #fff;
+		transform: translateX(-102%);
+	}
 }
 
 img.img-bg,
@@ -544,4 +585,70 @@ iframe {
 	max-width: 340px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.container {
+	@include media-breakpoint-up(xxl) {
+		--bs-gutter-x: #{rem(80)};
+	}
+}
+
+h1, .h1 {
+	line-height: 1.15;
+	@include media-breakpoint-down(md) {
+		font-size: rem(46);
+	}
+}
+h2, .h2 {
+	line-height: 1.08;
+	@include media-breakpoint-down(md) {
+		font-size: rem(32);
+	}
+}
+h3, .h3 {
+	line-height: 1.25;
+	@include media-breakpoint-down(md) {
+		font-size: rem(24);
+	}
+}
+h4, .h4 {
+	line-height: 1.4;
+	@include media-breakpoint-down(md) {
+		font-size: rem(20);
+	}
+}
+h5, .h5 {
+	line-height: 1.25;
+	@include media-breakpoint-down(md) {
+		font-size: rem(16);
+	}
+}
+h6, .h6 {
+	line-height: 1.2;
+	@include media-breakpoint-down(md) {
+		font-size: rem(12);
+	}
+}
+
+.cursor-js {
+	will-change: transform;
+	position: fixed;
+	overflow: hidden;
+	width: 10px;
+	height: 10px;
+	left: 0;
+	top: 0;
+	display: none;
+	transition: transform .4s cubic-bezier(.23,1,.32,1);
+	pointer-events: none;
+	@include media-breakpoint-up(lg) {
+		display: block;
+	}
+	.cursor-border {
+		height: rem(10);
+    width: rem(10);
+		background-color: $orange;
+    border-radius: 50%;
+		pointer-events: none;
+	}
 }

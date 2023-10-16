@@ -5,8 +5,11 @@
 		text-align: center;
 		@include roww(20px);
 		flex-wrap: wrap;
+		justify-content: center;
 	}
-
+	@include media-breakpoint-up(xl) {
+		--bs-gutter-x: #{rem(40)};
+	}
 	list-style: none;
 	position: relative;
 	margin-bottom: 0;
@@ -15,20 +18,35 @@
 		
 		// margin-left: 0;
 		// margin-right: 0;
-		padding: 0;
+		// padding: 0;
+		&:nth-child(2) {
+			@include media-breakpoint-up(lg) {
+				margin-left: rem(150);
+			} 
+			@include media-breakpoint-up(xl) {
+				margin-left: rem(343);
+			}
+		}
+		&.active {
+			a:after {
+				background-color: #fff;
+				transform: none;
+			} 
+		}
 	}
 	a{
 		display: block;
-		padding: rem(20) calc(var(--bs-gutter-x) / 2);
+		// padding: 0 calc(var(--bs-gutter-x) / 2);
+		position: relative;
 	}
 }
 
 
 
 .toggle-menu-mobile {
-	--h: #{em(2)};
+	--h: #{rem(2)};
 	--color: #{$primary};
-	--position: calc(var(--h) * 2);
+	--position: calc(var(--h) * 1.5);
 	&.on span {
 		--color: transparent;
 	}
@@ -38,9 +56,9 @@
 		--rotate: 45deg;
 	}
 	display: block;
-	height: calc(var(--h)* 12);
+	height: rem(20);
 	position: relative; 
-	font-size: 32px;
+	font-size: 36px;
 	width: 1em;
 	cursor: pointer;
 	span:after,
@@ -52,16 +70,19 @@
 	span {
 		@include a-cent(y);
 		display: block;
+		--color: transparent;
 	}
 
 	span:before { 
 		top: var(--position);
 		transform: rotate3d(0,0,1, var(--rotate, 0));
+		--color: #fff;
 	}
 
 	span:after {
 		bottom: var(--position);
 		transform: rotate3d(0,0,1, calc(-1 * var(--rotate,0)));
+		--color: #fff;
 	}
 	span,
 	span:after,
