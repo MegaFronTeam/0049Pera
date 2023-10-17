@@ -92,6 +92,7 @@
 		}
 	}
 	&__swiper {
+		position: relative;
 		overflow: visible;
 		z-index: 1;
 		&:before {
@@ -108,6 +109,11 @@
 		&:hover {
 			.sContact__swiper-slide {
 				color: #fff;
+			}
+			.sContact__circle {
+				&:before {
+					transform: translate(-50%, -50%) scale(1.19354839);
+				}
 			}
 		}
 		.swiper {
@@ -133,6 +139,45 @@
 		}
 		@include media-breakpoint-up(xxl) {
 			font-size: rem(240);
+		}
+	}
+	&__circle {
+		position: absolute;
+		width: rem(96);
+		height: rem(96);
+		top: 50%;
+		display: flex;
+		align-items: center;
+		padding: rem(20);
+		z-index: 10;
+		border-radius: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		@include media-breakpoint-up(lg) {
+			width: rem(128);
+			height: rem(128);
+			right: rem(131);
+			top: 0;
+			transform: none;
+		}
+		@include media-breakpoint-up(xl) {
+			right: rem(179);
+		}
+		@include media-breakpoint-up(xxl) {
+			right: rem(355);
+		}
+		&:before {
+			@include mt;
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			background-color: $orange;
+			z-index: -1;
 		}
 	}
 	@include media-breakpoint-up(xl) {}

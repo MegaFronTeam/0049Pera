@@ -7,7 +7,7 @@
 	// min-height: 100vh;
 	display: flex;
 	@include media-breakpoint-up(md) {
-		min-height: calc(var(--vh, 1vh) * 100 - rem(144));
+		min-height: calc(var(--vh, 1vh) * 100 - rem(104));
 		--sPT: #{rem(0)};
 		--sPB: #{rem(40)};
 	}

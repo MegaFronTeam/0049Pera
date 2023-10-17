@@ -24,11 +24,11 @@ mixin top-nav()
 			+e.row.row
 				.col-auto
 					+e.logo(href='/'): +img('img/svg/logo.svg')
-				+e.col.col-auto.col-lg.order-lg-0.order-last
-					.menu-mobile.menu-mobile--js
-						.menu-mobile__inner
-							+menu-toggle()
-							+mnu()
+				.col.d-none.d-lg-block
+					+mnu()
+					//- .menu-mobile.menu-mobile--js
+					//- 	.menu-mobile__inner
+					//- 		+menu-toggle()
 				.col-auto.d-none.d-lg-block
 					+e.theme-changer(href='#') Dark
 				.col-auto.d-lg-none.ms-auto
