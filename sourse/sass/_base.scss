@@ -502,7 +502,7 @@ iframe {
 .custom-scroll {
 	/* ===== Scrollbar CSS ===== */
   /* Firefox */
-	--bs-primary: #DEDEDE;
+	--bs-primary: #{$orange};
  
   & {
     scrollbar-width: auto;
@@ -651,4 +651,22 @@ h6, .h6 {
     border-radius: 50%;
 		pointer-events: none;
 	}
+}
+
+.scroller {
+	@include media-breakpoint-up(lg) {
+		height: 100vh;
+	}
+	z-index: 2;
+	// position: fixed;
+}
+
+.scrollbar-thumb{
+	// border-radius: 0 !important;
+	background: $orange !important;
+}
+
+.scrollbar-track {
+	border-radius: 4px !important;
+	background: rgba(222, 222, 222, .25) !important;
 }

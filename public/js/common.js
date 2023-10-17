@@ -23,43 +23,36 @@ function eventHandler() {
 	whenResize();
 
 
-	let defaultSl = {
-		spaceBetween: 0,
-		lazy: {
-			loadPrevNext: true,
-		},
-		watchOverflow: true,
-		loop: true,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		pagination: {
-			el: ' .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-			// renderBullet: function (index, className) {
-			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
-			// }
-		},
-	}
-
 	new Swiper('.breadcrumb-slider--js', {
 		slidesPerView: 'auto',
 		freeMode: true,
 		watchOverflow: true
 	});
 
-	const swiper4 = new Swiper('.sBanners__slider--js', { // если не используешь методы swiper  - можно обращаться без нее к Swiper
-		// slidesPerView: 5,
-		...defaultSl,
-		slidesPerView: 'auto',
-		freeMode: true,
-		loopFillGroupWithBlank: true,
-		touchRatio: 0.2,
-		slideToClickedSlide: true,
-		freeModeMomentum: true,
 
+	let scroller = document.querySelector(".scroller");
+
+	if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		Scrollbar.init(scroller, {
+			damping: .1,
+			thumbMinSize: 20,
+			alwaysShowTracks: true,
+		});
+	};
+
+	new Swiper('.sContact__swiper--js .swiper', {
+		// slidesPerView: 'auto',
+		spaceBetween: 40,
+		loop: true,
+		draggable: false,
+		speed: 15000,
+		autoplay: {
+			delay: 0,
+			disableOnInteraction: false,
+		},
+		freemode: {
+			enabled: true,
+		},
 	});
 
 };

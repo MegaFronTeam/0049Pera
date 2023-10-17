@@ -2,8 +2,21 @@ mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContact
-				
-			+e.row.row
+			+e.row
+				.row
+					.col-lg
+						+b.section-title 
+							span Contact Us
+							h2 Let&rsquo;s talk #[+img('img/title-img-3.png')] about a&nbsp;project, collaboration or&nbsp;an&nbsp;idea you may have
+					.col-auto.ms-auto
+						+e.wrap
+							+e.link(href='mailto:info@pera.global') info@pera.global
+							+e.link(href='#') Whatsapp
+							+e.link(href='#') Telegram
+			+e.swiper--js(href='#')
+				.swiper
+					.swiper-wrapper
+						+e.swiper-slide.swiper-slide pera global
+						+e.swiper-slide.swiper-slide pera global
+						+e.swiper-slide.swiper-slide pera global
 	// end sContact

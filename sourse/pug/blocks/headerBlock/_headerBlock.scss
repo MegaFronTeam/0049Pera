@@ -45,6 +45,9 @@
 			@include media-breakpoint-up(md) {
 				max-width: calc(rem(43.594) + 7.5vw);
 			}
+			@include media-breakpoint-up(lg) {
+				max-width: rem(99);
+			}
 			@include media-breakpoint-up(xl) {
 				max-width: rem(138);
 			}
