@@ -1,9 +1,13 @@
 mixin footer()
 	+b.FOOTER.footer.section
 		.container
-			.row
-				.col
-					
-				.col Footer
-				.col
-				.col-auto
+			+e.wrap
+				+e.row.row
+					.col-md.order-md-2
+						ul
+							li: a(href="#") Behance 
+							li: a(href="#") Dprofile 
+							li: a(href="#") Awwwards 
+							li: a(href="#") Dribbble
+					+e.col.col.col-md-3.order-md-1 © 2023 Pera.Global
+					.col-auto.order-md-3: a(href="#") Private Policy 

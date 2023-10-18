@@ -641,6 +641,7 @@ h6, .h6 {
 	display: none;
 	transition: transform .4s cubic-bezier(.23,1,.32,1);
 	pointer-events: none;
+	z-index: 100;
 	@include media-breakpoint-up(lg) {
 		display: block;
 	}
