@@ -57,8 +57,8 @@ mixin form-wrap(inp)
 
 
 mixin in-c(typ="checkbox", text, name= typ )
-	+b.LABEL.custom-input.form-check
-		+e.INPUT.input.form-check-input(name=name, type=typ)&attributes(attributes)
+	+b.LABEL.custom-input&attributes(attributes).form-check
+		+e.INPUT.input.form-check-input(name=name, type=typ)
 		if block
 			block 
 		else
@@ -75,5 +75,5 @@ mixin add-file(n)
 
 mixin policy()
 	+e.policy
-		+in-c()(checked)
-			+e.SMALL.text.text-secondary Согласен на обработку и хранение моих персональных данных в соответствии с условиями
+		+in-c()(checked) 
+			| By clicking the "Hire us" button, you agree to the Privacy Policy.

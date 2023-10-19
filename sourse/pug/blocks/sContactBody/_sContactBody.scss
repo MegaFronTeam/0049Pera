@@ -1,0 +1,125 @@
+// start .sContactBody
+.sContactBody {
+	--sPT: #{rem(0)};
+	--sPB: #{rem(0)};
+	// --sTPB: #{rem()};
+	
+	&__row{
+		--bs-gutter-x: #{rem(0)};
+		--bs-gutter-y: #{rem(0)};
+
+		border-top: 1px solid $gray-700;
+	}
+	&__col {
+		border-right: 1px solid $gray-700;
+	}
+	&__nav {
+		list-style-type: none;
+		margin-bottom: 0;
+		padding: rem(80) rem(40) rem(80) 0;
+		li {
+			&:not(:last-child) {
+				margin-bottom: rem(10);
+			}
+			a {
+				font-size: 1.4;
+				color: $gray-500;
+				font-size: rem(20);
+				@include media-breakpoint-up(xl) {
+					font-size: rem(36);
+				}
+				&:hover, &.active {
+					color: #fff;
+				}
+			}
+		}
+	}
+	a {
+		max-width: max-content;
+		&:after {
+			content: unset;
+		}
+	}
+	.form-wrap {
+		&__wrap {
+			padding: rem(36) 0;
+			@include media-breakpoint-up(lg) {
+				padding: rem(80) rem(40);
+			}
+			@include media-breakpoint-up(xl) {
+				padding: rem(80) rem(40) rem(80) rem(80);
+			}
+			&:not(:last-of-type) {
+				border-bottom: 1px solid $gray-700;
+			}
+			&--inputs {
+				@include roww('12px', '12px', m);
+				display: flex;
+				flex-wrap: wrap;
+				@include media-breakpoint-up(lg) {
+					--bs-gutter-x: #{rem(10)};
+					--bs-gutter-y: #{rem(10)};
+				}
+			}
+			&--file {
+				.form-wrap__input-wrap {
+					margin-bottom: rem(24);
+					@include media-breakpoint-up(lg) {
+						margin-bottom: rem(40);
+					}
+				}
+				.upload-field {
+					margin-bottom: rem(24);
+					@include media-breakpoint-up(lg) {
+						margin-bottom: rem(40);
+					}
+				}
+			}
+		}
+		&__col {
+			@media screen and (max-width: 357px) {
+				width: 100%;
+			}
+		}
+		&__input-row {
+			--bs-gutter-x: #{rem(20)};
+			--bs-gutter-y: #{rem(20)};
+			@include media-breakpoint-up(lg) {
+				--bs-gutter-x: #{rem(16)};
+				--bs-gutter-y: #{rem(18)};
+			}
+		}
+		&__example {
+			line-height: 1.2;
+			font-size: rem(18);
+			border-bottom: 1px solid currentColor;
+			color: $gray-500;
+			&:hover {
+				color: #fff;
+				border-bottom-color: transparent;
+			}
+			@include media-breakpoint-up(lg) {
+				font-size: rem(20);
+			}
+		}
+		&__btn {
+			display: block;
+			width: 100%;
+			margin-bottom: rem(24);
+			max-width: none;
+			@include media-breakpoint-up(lg) {
+				margin-bottom: rem(40);
+			}
+		}
+	}
+	.sticky-spacer {
+		height: 100% !important;
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sContactBody

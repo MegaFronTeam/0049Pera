@@ -671,3 +671,33 @@ h6, .h6 {
 	border-radius: 4px !important;
 	background: rgba(222, 222, 222, .25) !important;
 }
+
+.btn-white {
+	--bs-btn-color: #000;
+	--bs-btn-bg: #fff;
+	--bs-btn-hover-bg: #{$orange};
+	--bs-btn-active-bg: #{$orange};
+
+	line-height: 1.4;
+	--bs-btn-padding-x: #{rem(24)};
+	--bs-btn-padding-y: #{rem(16)};
+	--bs-btn-font-size: #{rem(20)};
+	--bs-btn-border-radius: 60px;
+	border: none;
+	text-align: left;
+	&:hover {
+		span {
+			transform: translateX(41%);
+		}
+	}
+	@include media-breakpoint-up(lg) {
+		--bs-btn-padding-x: #{rem(40)};
+		--bs-btn-padding-y: #{rem(15)};
+		--bs-btn-font-size: #{rem(36)};
+	}
+	span {
+		position: relative;
+		display: block;
+		@include mt;
+	}
+}

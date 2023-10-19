@@ -7,14 +7,15 @@ include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sForm/_sForm.pug
-include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sContactHead/_sContactHead.pug
+include ../blocks/sContactBody/_sContactBody.pug
 
 block variables
 	- let  mainPage= 'main-page' 
 	- let  bg= 'main.jpg'
 
 block title
-	- let  title= "Home"
+	- let  title= "Contact"
 	title= title
 block pagecontent
 	//- +mob-mnu()
@@ -22,8 +23,8 @@ block pagecontent
 	
 	//- +parts('header')
 	main
-		+headerBlock
-		+sContact
+		+sContactHead
+		+sContactBody
 	+parts('footer')
       
 

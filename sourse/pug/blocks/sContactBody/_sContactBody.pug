@@ -1,0 +1,42 @@
+mixin sContactBody(data)
+	// start sContactBody
+	+b.SECTION.sContactBody.section#sContactBody&attributes(attributes)
+		.container
+			+e.row.row
+				+e.col.col-lg-6.d-none.d-lg-block.sticky-wrap
+					.sticky-content
+						+e.UL.nav
+							li: a.active(href="#") Your contacts 
+							li: a(href="#") Services
+							li: a(href="#") Budget
+							li: a(href="#") Tell about your task
+				.col-lg-6
+					+b.form-wrap
+						+e.wrap
+							+input('Name *', 'text')(required).is-invalid
+							+input('Company', 'text')
+							+input('Number phone', 'tel')
+							+input('Email *', 'email')(required)
+						+e.wrap--inputs
+							+in-c('checkbox', 'Websites', 'type').custom-input--type
+							+in-c('checkbox', 'Clients for business', 'type').custom-input--type
+							+in-c('checkbox', 'Design', 'type').custom-input--type
+							+in-c('checkbox', 'Digital', 'type').custom-input--type
+							+in-c('checkbox', 'Promotion', 'type').custom-input--type
+							+in-c('checkbox', 'Sales', 'type').custom-input--type
+						+e.wrap
+							+e.input-row.row
+								+e.col.col-6: +in-c('radio', '< 5 000 $', 'type')
+								+e.col.col-6: +in-c('radio', 'about 14 000 $', 'type')
+								+e.col.col-6: +in-c('radio', '14 -42 000 $', 'type')
+								+e.col.col-6: +in-c('radio', '55-65 000 $', 'type')
+								+e.col.col-6: +in-c('radio', '>65 000 $', 'type')
+								+e.col.col-6: +in-c('radio', 'Do not know', 'type')
+						+e.wrap--file
+							+input('Write the task', 'text')
+							+upload-field
+							+e.example(href='#') Example of a brief
+						+e.wrap
+							+e.btn.btn.btn-white(href='#'): span Hire Us
+							+policy
+	// end sContactBody

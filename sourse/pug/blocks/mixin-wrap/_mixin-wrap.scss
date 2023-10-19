@@ -111,3 +111,55 @@
 	width: auto;
 	margin-right: rem(32);
 }
+
+.upload-field {
+	display: flex;
+	align-items: center;
+	&__btn {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		&:hover {
+			&::before {
+				background-color: $orange;
+			}
+		}
+		&:before {
+			@include mt;
+			content: '';
+			width: rem(24);
+			height: rem(24);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.5 0H6.5V12H5.5V0Z' fill='white'/%3E%3Cpath d='M12 5.5V6.5L0 6.5L4.37115e-08 5.5L12 5.5Z' fill='white'/%3E%3C/svg%3E%0A");
+			background-repeat: no-repeat;
+			background-size: rem(12);
+			background-position: center;
+			flex: 0 0 auto;
+			margin-right: rem(10);
+			background-color: $gray-700;
+			@include media-breakpoint-up(lg) {
+				width: rem(30);
+				height: rem(30);
+			}
+		}
+		span {
+			font-size: rem(18);
+			@include media-breakpoint-up(lg) {
+				font-size: rem(20);
+			}
+		}
+	}
+	&__file-name  {
+		font-size: rem(18);
+		margin-left: rem(8);
+		@include media-breakpoint-up(lg) {
+			font-size: rem(20);
+		}
+	}
+}
+.input-upload {
+	display: none;
+}

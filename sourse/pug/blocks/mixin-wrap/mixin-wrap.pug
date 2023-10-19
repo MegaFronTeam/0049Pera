@@ -50,3 +50,11 @@ mixin parts(elem)
 	script.
 		addBlock(`#{elem}`)
 	div(id=`${elem}Wrap`)
+
+mixin upload-field()
+	+b.upload-field
+		+e.input-wrap
+			+e.LABEL.btn
+				input.input-upload(type='file' name='file')
+				span Attach file
+		+e.file-name 
