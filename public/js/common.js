@@ -145,31 +145,34 @@ function eventHandler() {
 	const navLi = document.querySelectorAll('.sContactBody__nav li a');
     
 	const sections = document.querySelectorAll(`.hrefs-js [id]`);
-	
-	// const sectionsFromTop = [];
-	// for (const section of sections) {
-	// 	sectionsFromTop.push(section.getBoundingClientRect().top);
-	// }
 
 	if(navLi.length > 0 && sections.length > 0) {
-		for (const elem of navLi) {
-			elem.addEventListener('click', (e) => {
+		bodyScrollBar.addListener(() => {
+			navLi.forEach((item) => item.classList.remove('active'));
+			
+			for (let i = 0; i < sections.length; i++) {
+				if (i + 1 < sections.length) {
+					if (bodyScrollBar.isVisible(sections[i]) && !bodyScrollBar.isVisible(sections[i + 1])) {
+						navLi[i].classList.add('active');
+					} 
+				}
+				if (bodyScrollBar.isVisible(sections[sections.length - 1])) {
+					navLi[navLi.length - 1].classList.add('active');
+				}
+			}
+		})
+		for (let i = 0; i < navLi.length; i++) {
+			navLi[i].addEventListener('click', (e) => {
 				e.preventDefault();
-				navLi.forEach((item) => item.classList.remove('active'));
-				elem.classList.add('active');
-				bodyScrollBar.scrollIntoView(document.getElementById(elem.getAttribute('href').split('#')[1]), {
+				bodyScrollBar.scrollIntoView(sections[i], {
 					offsetTop: 114,
 				})
-				// for (var i = 0; i < sections.length; i++) {
-				// 	if(elem.getAttribute('href').split('#')[1] === sections[i].getAttribute('id')) {
-				// 		if (bodyScrollBar) {
-				// 			bodyScrollBar.scrollTo(0, sectionsFromTop[i] - 114, 1000);
-				// 		}
-				// 	}
-				// }
+				setTimeout(() => {
+					navLi.forEach((item) => item.classList.remove('active'));
+					navLi[i].classList.add('active');
+				}, 980);
 			})
 		}
-		// console.log(bodyScrollBar.isVisible(sections[1]));
 	}
 };
 if (document.readyState !== 'loading') {
