@@ -28,6 +28,32 @@
 	<body class="main-page" data-bg="main.jpg">
 		<script>addBlock(`header`)</script>
 		<div id="headerWrap"></div>
+		<div class="menu-mobile menu-mobile--js">
+			<div class="menu-mobile__inner">
+				<nav>
+					<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						<li class="menu-item active" itemprop="item"><a href="#" itemprop="url">Home</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Work</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Services</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">About</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Contact</a></li>
+					</ul>
+				</nav>
+				<div class="menu-mobile__social-links d-lg-none">
+					<ul>
+						<li><a href="#">Behance</a></li>
+						<li><a href="#">Dprofile</a></li>
+						<li><a href="#">Awwwards</a></li>
+						<li><a href="#">info@pera.global</a></li>
+						<li><a href="#">Whatsapp</a></li>
+						<li><a href="#">Telegram</a></li>
+					</ul>
+				</div><a class="top-nav__theme-changer d-lg-none" href="#">Dark</a>
+				<a class="menu-mobile__btn btn btn-primary" href="#"><span>Drop us a line</span>
+				</a>
+			</div>
+		</div>
+		<!--  мобильное меню-->
 		<div class="scroller">
 			<div class="main-wrapper">
 				<main>
@@ -64,16 +90,16 @@
 								<div class="sContactBody__col col-lg-6 d-none d-lg-block sticky-wrap">
 									<div class="sticky-content">
 										<ul class="sContactBody__nav">
-											<li><a class="active" href="#">Your contacts </a></li>
-											<li><a href="#">Services</a></li>
-											<li><a href="#">Budget</a></li>
-											<li><a href="#">Tell about your task</a></li>
+											<li><a class="active" href="#contacts">Your contacts </a></li>
+											<li><a href="#inputs">Services</a></li>
+											<li><a href="#price">Budget</a></li>
+											<li><a href="#text">Tell about your task</a></li>
 										</ul>
 									</div>
 								</div>
 								<div class="col-lg-6">
-									<div class="form-wrap">
-										<div class="form-wrap__wrap">
+									<div class="form-wrap hrefs-js">
+										<div class="form-wrap__wrap" id="contacts">
 											<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control is-invalid" inputmode="text" name="text" type="text" placeholder="Name *" required="required"/>
 											</div>
 											<!-- +e.input-wrap-->
@@ -87,7 +113,7 @@
 											</div>
 											<!-- +e.input-wrap-->
 										</div>
-										<div class="form-wrap__wrap form-wrap__wrap--inputs">
+										<div class="form-wrap__wrap form-wrap__wrap--inputs" id="inputs">
 											<label class="custom-input form-check custom-input custom-input--type"><input class="custom-input__input form-check-input" name="type" type="checkbox"/><span class="custom-input__text form-check-label">Websites</span>
 											</label>
 											<label class="custom-input form-check custom-input custom-input--type"><input class="custom-input__input form-check-input" name="type" type="checkbox"/><span class="custom-input__text form-check-label">Clients for business</span>
@@ -101,7 +127,7 @@
 											<label class="custom-input form-check custom-input custom-input--type"><input class="custom-input__input form-check-input" name="type" type="checkbox"/><span class="custom-input__text form-check-label">Sales</span>
 											</label>
 										</div>
-										<div class="form-wrap__wrap">
+										<div class="form-wrap__wrap" id="price">
 											<div class="form-wrap__input-row row">
 												<div class="form-wrap__col col-6">
 													<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="type" type="radio"/><span class="custom-input__text form-check-label">&lt; 5 000 $</span>
@@ -129,7 +155,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="form-wrap__wrap form-wrap__wrap--file">
+										<div class="form-wrap__wrap form-wrap__wrap--file" id="text">
 											<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder="Write the task"/>
 											</div>
 											<!-- +e.input-wrap-->

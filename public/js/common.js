@@ -132,9 +132,12 @@ function eventHandler() {
 			scroller: scroller,
 			// trigger: stickyNav,
 			onUpdate: (self) => {
-				// console.log(self);
-				// stickyNav.attach();
-				stickyNav.refresh();
+				stickyNav.update();
+				if(stickyElem.classList.contains('sticky')) {
+					stickyElem.style.transform = `translate3d(0px, ${bodyScrollBar.offset.y}px, 0px)`;
+				} else {
+					stickyElem.style.transform = `translate3d(0px,0px, 0px)`;
+				}
 			},
 		})
 	}

@@ -48,6 +48,20 @@ html(lang="ru")
 	//- body.loaded_hiding(class= mainPage) 
 	body(class=mainPage data-bg=bg)
 		+parts('header')
+		+b.menu-mobile--js
+			+e.inner
+				+mnu()
+				+e.social-links.d-lg-none
+					ul
+						li: a(href="#") Behance
+						li: a(href="#") Dprofile
+						li: a(href="#") Awwwards
+						li: a(href="#") info@pera.global
+						li: a(href="#") Whatsapp
+						li: a(href="#") Telegram
+				a.top-nav__theme-changer.d-lg-none(href='#') Dark
+				+e.btn.btn.btn-primary(href='#'): span Drop us a line
+		//  мобильное меню
 		.scroller
 			.main-wrapper
 				block pagecontent
