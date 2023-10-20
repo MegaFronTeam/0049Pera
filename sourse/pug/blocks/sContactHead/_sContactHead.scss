@@ -42,7 +42,16 @@
 			--bs-gutter-y: #{rem(10)};
 		}
 	}
-
+	span {
+		display: block;
+		font-size: rem(14);
+		line-height: 1.4;
+		margin-bottom: rem(20);
+		color: $gray-500;
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

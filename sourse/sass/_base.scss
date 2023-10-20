@@ -687,7 +687,7 @@ h6, .h6 {
 	text-align: left;
 	&:hover {
 		span {
-			transform: translateX(41%);
+			transform: translateX(33%);
 		}
 	}
 	@include media-breakpoint-up(lg) {

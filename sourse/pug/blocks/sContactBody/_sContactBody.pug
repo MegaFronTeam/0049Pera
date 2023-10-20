@@ -13,18 +13,22 @@ mixin sContactBody(data)
 				.col-lg-6
 					+b.form-wrap.hrefs-js
 						+e.wrap#contacts
+							+e.title Your contacts
 							+input('Name *', 'text')(required).is-invalid
 							+input('Company', 'text')
 							+input('Number phone', 'tel')
 							+input('Email *', 'email')(required)
 						+e.wrap--inputs#inputs
-							+in-c('checkbox', 'Websites', 'type').custom-input--type
-							+in-c('checkbox', 'Clients for business', 'type').custom-input--type
-							+in-c('checkbox', 'Design', 'type').custom-input--type
-							+in-c('checkbox', 'Digital', 'type').custom-input--type
-							+in-c('checkbox', 'Promotion', 'type').custom-input--type
-							+in-c('checkbox', 'Sales', 'type').custom-input--type
+							+e.title Services
+							+e.services-wrap
+								+in-c('checkbox', 'Websites', 'type').custom-input--type
+								+in-c('checkbox', 'Clients for business', 'type').custom-input--type
+								+in-c('checkbox', 'Design', 'type').custom-input--type
+								+in-c('checkbox', 'Digital', 'type').custom-input--type
+								+in-c('checkbox', 'Promotion', 'type').custom-input--type
+								+in-c('checkbox', 'Sales', 'type').custom-input--type
 						+e.wrap#price
+							+e.title Budget
 							+e.input-row.row
 								+e.col.col-6: +in-c('radio', '< 5 000 $', 'type')
 								+e.col.col-6: +in-c('radio', 'about 14 000 $', 'type')
@@ -33,6 +37,7 @@ mixin sContactBody(data)
 								+e.col.col-6: +in-c('radio', '>65 000 $', 'type')
 								+e.col.col-6: +in-c('radio', 'Do not know', 'type')
 						+e.wrap--file#text
+							+e.title Tell about your task
 							+input('Write the task', 'text')
 							+upload-field
 							+e.example(href='#') Example of a brief

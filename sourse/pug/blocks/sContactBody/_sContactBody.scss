@@ -52,15 +52,15 @@
 			&:not(:last-of-type) {
 				border-bottom: 1px solid $gray-700;
 			}
-			&--inputs {
-				@include roww('12px', '12px', m);
-				display: flex;
-				flex-wrap: wrap;
-				@include media-breakpoint-up(lg) {
-					--bs-gutter-x: #{rem(10)};
-					--bs-gutter-y: #{rem(10)};
-				}
-			}
+			// &--inputs {
+			// 	@include roww('12px', '12px', m);
+			// 	display: flex;
+			// 	flex-wrap: wrap;
+			// 	@include media-breakpoint-up(lg) {
+			// 		--bs-gutter-x: #{rem(10)};
+			// 		--bs-gutter-y: #{rem(10)};
+			// 	}
+			// }
 			&--file {
 				.form-wrap__input-wrap {
 					margin-bottom: rem(24);
@@ -109,6 +109,24 @@
 			max-width: none;
 			@include media-breakpoint-up(lg) {
 				margin-bottom: rem(40);
+			}
+		}
+		&__title {
+			font-size: rem(20);
+			color: $gray-500;
+			margin-bottom: rem(36);
+			line-height: 1.4;
+			@include media-breakpoint-up(lg) {
+				display: none;
+			}
+		}
+		&__services-wrap {
+			@include roww('12px', '12px', m);
+			display: flex;
+			flex-wrap: wrap;
+			@include media-breakpoint-up(lg) {
+				--bs-gutter-x: #{rem(10)};
+				--bs-gutter-y: #{rem(10)};
 			}
 		}
 	}
