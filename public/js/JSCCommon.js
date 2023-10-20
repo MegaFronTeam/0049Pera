@@ -396,7 +396,7 @@ class JSCCommon {
 		this.makeDDGroup();
 		this.disabledBtn();
 		this.setScreen();
-		this.setActiveAnchor('.sContactBody__nav li a');
+		// this.setActiveAnchor('.sContactBody__nav li a');
 		// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 		// this.animateScroll();
 
