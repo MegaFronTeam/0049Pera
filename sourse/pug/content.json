@@ -4,7 +4,7 @@
 		{	"name":"Work", "url":"#"},
 		{"name":"Services", "url":"#"},
 		{"name":"About", "url":"#"} ,
-		{"name":"Contact", "url":"#"} 
+		{"name":"Contact", "url":"/contact.html"} 
 	],
 	"social":[
 		"fb","instagram","telegram"

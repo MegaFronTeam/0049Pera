@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no, viewport-fit=cover">
 		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
-		<link href="libs/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+		<link href="libs/@splidejs/splide/css/splide.min.css" rel="stylesheet"/>
 		<link href="libs/@fancyapps/ui/fancybox/fancybox.css" rel="stylesheet"/>
 		<link href="libs/aos/aos.css" rel="stylesheet"/>
 		<link href="css/custom-bootstrap.min.css" rel="stylesheet"/>
@@ -36,7 +36,7 @@
 						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Work</a></li>
 						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Services</a></li>
 						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">About</a></li>
-						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Contact</a></li>
+						<li class="menu-item" itemprop="item"><a href="/contact.html" itemprop="url">Contact</a></li>
 					</ul>
 				</nav>
 				<div class="menu-mobile__social-links d-lg-none">
@@ -57,65 +57,17 @@
 		<div class="scroller">
 			<div class="main-wrapper">
 				<main>
-					<!-- start headerBlock-->
-					<div class="headerBlock section" id="headerBlock">
-						<div class="headerBlock__container container">
-							<div class="headerBlock__row row" data-aos="fade-up">
-								<div class="col-lg">
-									<h1>We<img src="img/svg/titleLogo.svg" alt="" loading="lazy"/>create<br>digital products<img src="img/title-img-2.png" alt="" loading="lazy"/>
-									</h1>
-								</div>
-								<div class="col-lg-auto ms-lg-auto">
-									<p>Specialized in&nbsp;UX/UI Design, Development, Promotion and Sales</p>
-								</div>
-							</div>
-							<div class="headerBlock__footer-row row" data-aos="fade-up">
-								<div class="col-auto"><span>Our work</span></div>
-								<div class="col-auto d-none d-lg-block">
-									<a class="headerBlock__scroll" href="#">Scroll
-									</a>
-								</div>
-								<div class="col-auto d-none d-lg-block">
-									<a class="headerBlock__email" href="mailto:info@pera.global">info@pera.global
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- end headerBlock-->
 					<!-- start sContact-->
 					<section class="sContact section" id="sContact">
 						<div class="container">
-							<div class="sContact__row" data-aos="fade-up">
-								<div class="row">
-									<div class="col-lg">
-										<div class="section-title"> <span>Contact Us</span>
-											<h2>Let&rsquo;s talk <img src="img/title-img-3.png" alt="" loading="lazy"/> about a&nbsp;project, collaboration or&nbsp;an&nbsp;idea you may have
-											</h2>
-										</div>
-									</div>
-									<div class="col-auto ms-auto">
-										<div class="sContact__wrap">
-											<a class="sContact__link" href="mailto:info@pera.global">info@pera.global
-											</a>
-											<a class="sContact__link" href="#">Whatsapp
-											</a>
-											<a class="sContact__link" href="#">Telegram
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
 							<a class="sContact__swiper sContact__swiper--js" href="#" data-aos="fade-up">
 								<div class="sContact__circle">Drop us<br>a line
 								</div>
-								<div class="swiper">
-									<div class="swiper-wrapper">
-										<div class="sContact__swiper-slide swiper-slide">pera global
-										</div>
-										<div class="sContact__swiper-slide swiper-slide">pera global
-										</div>
-										<div class="sContact__swiper-slide swiper-slide">pera global
+								<div class="splide">
+									<div class="splide__track">
+										<div class="splide__list">
+											<div class="sContact__swiper-slide splide__slide">pera global
+											</div>
 										</div>
 									</div>
 								</div>
@@ -133,7 +85,8 @@
 		</div>
 		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="libs/@fancyapps/ui/fancybox/fancybox.umd.js"> </script>
-		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/@splidejs/splide-extension-auto-scroll/js/splide-extension-auto-scroll.min.js"> </script>
+		<script src="libs/@splidejs/splide/js/splide.min.js"> </script>
 		<script src="libs/inputmask/inputmask.min.js"> </script>
 		<script src="libs/smooth-scrollbar/smooth-scrollbar.js"> </script>
 		<script src="js/customCursor.js" type="text/javascript"> </script>

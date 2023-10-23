@@ -21,14 +21,7 @@ function eventHandler() {
 	}, { passive: true });
 
 	whenResize();
-
-
-	new Swiper('.breadcrumb-slider--js', {
-		slidesPerView: 'auto',
-		freeMode: true,
-		watchOverflow: true
-	});
-
+ 
 
 	gsap.registerPlugin(ScrollTrigger);
 	let scroller = document.querySelector(".scroller");
@@ -82,21 +75,47 @@ function eventHandler() {
 		});
 	})
 
-	new Swiper('.sContact__swiper--js .swiper', {
-		// slidesPerView: 'auto',
-		spaceBetween: 40,
-		loop: true,
-		draggable: false,
-		speed: 15000,
-		autoplay: {
-			delay: 0,
-			disableOnInteraction: false,
+	// const textLsider = new Swiper('.sContact__swiper--js .swiper', {
+	// 	// slidesPerView: 'auto',
+	// 	spaceBetween: 40,
+	// 	loop: true,
+	// 	draggable: false,
+	// 	// speed: 15000,
+	// 	loopedSlides: 13,
+	// 	// autoplay: {
+	// 	// 	delay: 0,
+	// 	// 	disableOnInteraction: false,
+	// 	// },
+	// 	freemode: {
+	// 		enabled: true,
+	// 	},
+	// });
+	
+	
+	const splide = new Splide( '.sContact__swiper--js .splide', {
+		type   : 'loop',
+		drag   : 'free',
+		// focus  : 'center',
+		autoWidth: true,
+		autoScroll: {
+			speed: 1,
+			autoStart: false,
+			pauseOnHover: false,
+			pauseOnFocus: false,
 		},
-		freemode: {
-			enabled: true,
-		},
-	});
+	} );
+	
+	splide.mount(window.splide.Extensions);
+	const { AutoScroll } = splide.Components; 
+	
 
+	splide.autoScroll
+	$(document).on("mouseover", ".sContact__swiper--js", function() {
+		AutoScroll.play();
+	})
+	$(document).on("mouseleave", ".sContact__swiper--js", function() {
+		AutoScroll.pause(); 
+	})
 	AOS.init();	
 
 	document.addEventListener('aos:in', ({ detail }) => {
