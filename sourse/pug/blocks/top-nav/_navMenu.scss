@@ -1,12 +1,12 @@
 .menu{
-	@include media-breakpoint-up(lg) {
+	// @include media-breakpoint-up(lg) {
 
 		display: flex;
 		text-align: center;
 		@include roww(20px);
-		flex-wrap: wrap;
+		// flex-wrap: wrap;
 		justify-content: center;
-	}
+	// }
 	@include media-breakpoint-up(xl) {
 		--bs-gutter-x: #{rem(40)};
 	}
@@ -19,14 +19,14 @@
 		// margin-left: 0;
 		// margin-right: 0;
 		// padding: 0;
-		&:nth-child(2) {
-			@include media-breakpoint-up(lg) {
-				margin-left: rem(150);
-			} 
-			@include media-breakpoint-up(xl) {
-				margin-left: rem(343);
-			}
-		}
+		// &:nth-child(2) {
+		// 	@include media-breakpoint-up(lg) {
+		// 		margin-left: rem(150);
+		// 	} 
+		// 	@include media-breakpoint-up(xl) {
+		// 		margin-left: rem(343);
+		// 	}
+		// }
 		&.active {
 			a:after {
 				background-color: #fff;

@@ -22,15 +22,15 @@ mixin top-nav()
 	+b.top-nav.block-with-lazy.section
 		.container
 			+e.row.row
-				.col-auto
+				.col
 					+e.logo(href='/'): +img('img/svg/logo.svg')
-				.col.d-none.d-lg-block
+				.col-auto
 					+mnu()
 					//- .menu-mobile.menu-mobile--js
 					//- 	.menu-mobile__inner
 					//- 		+menu-toggle()
-				.col-auto.d-none.d-lg-block
-					+e.theme-changer(href='#') Dark
-				.col-auto.d-lg-none.ms-auto
-					+menu-toggle()
+				//- .col-auto.d-none.d-lg-block
+				//- 	+e.theme-changer(href='#') Dark
+				//- .col-auto.d-lg-none.ms-auto
+				//- 	+menu-toggle()
 	// end top-nav
