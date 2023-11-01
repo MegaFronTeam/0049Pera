@@ -7,10 +7,13 @@ mixin sContact()
 					.col-lg
 						+b.section-title 
 							span Contact Us
-							h2 Let&rsquo;s talk #[+img('img/title-img-3.png')] about a&nbsp;project, collaboration or&nbsp;an&nbsp;idea you may have
+							h2 Let&rsquo;s talk
+								+e.img-wrap: +img('img/title-img-3.jpg', 'bg') 
+								| 
+								| about a&nbsp;project, collaboration or&nbsp;an&nbsp;idea you may have
 					.col-auto.ms-auto
 						+e.wrap
-							+e.link(href='mailto:info@pera.global') info@pera.global
+							+e.link(href='mailto:hello@quasabra.com') hello@quasabra.com
 							+e.link(href='#') Whatsapp
 							+e.link(href='#') Telegram
 			+e.swiper--js(href='#' data-aos="fade-up")
@@ -18,5 +21,5 @@ mixin sContact()
 				.splide
 					.splide__track
 						.splide__list
-							+e.swiper-slide.splide__slide pera global
+							+e.swiper-slide.splide__slide  QUASABRA&nbsp;
 	// end sContact

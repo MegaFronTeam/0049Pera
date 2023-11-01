@@ -11,10 +11,10 @@ mixin sContactBody(data)
 							li: a(href="#price") Budget
 							li: a(href="#text") Tell about your task
 				.col-lg-6
-					+b.form-wrap.hrefs-js
+					+form-wrap().hrefs-js
 						+e.wrap#contacts
 							+e.title Your contacts
-							+input('Name *', 'text')(required).is-invalid
+							+input('Name *', 'text')(required)
 							+input('Company', 'text')
 							+input('Number phone', 'tel')
 							+input('Email *', 'email')(required)
@@ -31,17 +31,17 @@ mixin sContactBody(data)
 							+e.title Budget
 							+e.input-row.row
 								+e.col.col-6: +in-c('radio', '< 5 000 $', 'type')
-								+e.col.col-6: +in-c('radio', 'about 14 000 $', 'type')
-								+e.col.col-6: +in-c('radio', '14 -42 000 $', 'type')
-								+e.col.col-6: +in-c('radio', '55-65 000 $', 'type')
-								+e.col.col-6: +in-c('radio', '>65 000 $', 'type')
-								+e.col.col-6: +in-c('radio', 'Do not know', 'type')
+								+e.col.col-6: +in-c('radio', '5 000 $ - 10 000 $', 'type')
+								+e.col.col-6: +in-c('radio', '10 000 $ - 20 000 $', 'type')
+								+e.col.col-6: +in-c('radio', '20 000 $ - 30 000 $', 'type')
+								+e.col.col-6: +in-c('radio', '> 50 000 $', 'type')
+								+e.col.col-6: +in-c('radio', 'To be discussed', 'type')
 						+e.wrap--file#text
 							+e.title Tell about your task
 							+input('Write the task', 'text')
 							+upload-field
 							+e.example(href='#') Example of a brief
 						+e.wrap
-							+e.btn.btn.btn-white(href='#'): span Hire Us
+							+e.btn.btn.btn-white(type='submit'): span Hire Us
 							+policy
 	// end sContactBody
