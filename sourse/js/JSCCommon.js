@@ -172,65 +172,76 @@ class JSCCommon {
 			}
 			return b;
 		})();
-		// form
-		$(document).on('submit', "form", function (e) {
+
+		const th = $('form');
+		const formInpus = {}
+		formInpus.name = th.find('[name="name"]').val() || '';
+		formInpus.email = th.find('[name="email"]').val() || '';
+		formInpus.tel = th.find('[name="tel"]').val() ;
+		formInpus.organization = th.find('[name="organization"]').val() ;
+
+		formInpus.utm_source = decodeURIComponent(gets['utm_source'] || '');
+		formInpus.utm_term = decodeURIComponent(gets['utm_term'] || '');
+		formInpus.utm_medium = decodeURIComponent(gets['utm_medium'] || '');
+		formInpus.utm_campaign = decodeURIComponent(gets['utm_campaign'] || '');
+
+		formInpus.file = th.find('[name="file"]').prop('files')[0]
+		
+		var data = new FormData($('form')[0]); 
+
+		for (const key in formInpus) {
+			if (Object.hasOwnProperty.call(object, key)) {
+				const element = object[key];
+				
+				data.append(`${key}`, object[key]);
+			}
+		}
+
+		console.log(formInpus)
+		$("form").submit(function (e) {
 			e.preventDefault();
-			const th = $(this);
-			var data = th.serialize();
-			th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
+	
+			// data.append('email', email);
+			// // if (tel ) {
+	
+			// // 	data.append('organization', organization);
+			// // 	data.append('tel', tel);
+			// // }
+			// // else {
+			// // 	var file = th.find('[name="file"]').prop('files')[0]
+			// // 	data.append('file', file);
+			// // }
+			// data.append('utm_source', utm_source);
+			// data.append('utm_term', utm_term);
+			// data.append('utm_medium', utm_medium);
+			// data.append('utm_campaign', utm_campaign); 
+	
 			$.ajax({
 				url: 'action.php',
+				dataType: 'text',  // what to expect back from the PHP script, if anything
+				cache: false,
+				contentType: false,
+				processData: false,
 				type: 'POST',
 				data: data,
 			}).done(function (data) {
-
-				Fancybox.close();
-				Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
-				// window.location.replace("/thanks.html");
+ 
+				// $.fancybox.open({
+				// 	src: '#modal-thanks',
+				// 	type: 'inline'
+				// }); 
+				console.log('ok')
+	
 				setTimeout(function () {
 					// Done Functions
 					th.trigger("reset");
 					// $.magnificPopup.close();
-					// ym(53383120, 'reachGoal', 'zakaz');
-					// yaCounter55828534.reachGoal('zakaz');
+					// $.fancybox.close();
+	
 				}, 4000);
 			}).fail(function () { });
-
-		});
-
-
-		// async function submitForm(event) {
-		// 	event.preventDefault(); // отключаем перезагрузку/перенаправление страницы
-		// 	try {
-		// 		// Формируем запрос
-		// 		const response = await fetch(event.target.action, {
-		// 			method: 'POST',
-		// 			body: new FormData(event.target)
-		// 		});
-		// 		// проверяем, что ответ есть
-		// 		if (!response.ok) throw (`Ошибка при обращении к серверу: ${response.status}`);
-		// 		// проверяем, что ответ действительно JSON
-		// 		const contentType = response.headers.get('content-type');
-		// 		if (!contentType || !contentType.includes('application/json')) {
-		// 			throw ('Ошибка обработки. Ответ не JSON');
-		// 		}
-		// 		// обрабатываем запрос
-		// 		const json = await response.json();
-		// 		if (json.result === "success") {
-		// 			// в случае успеха
-		// 			alert(json.info);
-		// 		} else {
-		// 			// в случае ошибки
-		// 			console.log(json);
-		// 			throw (json.info);
-		// 		}
-		// 	} catch (error) { // обработка ошибки
-		// 		alert(error);
-		// 	}
-		// }
+	
+		}); 
 	}
 	static heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
