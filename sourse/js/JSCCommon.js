@@ -216,12 +216,13 @@ class JSCCommon {
 				data: data,
 			}).done(function (data) {
  
-				Fancybox.close();
-				Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
+				// Fancybox.close();
+				// Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
 				// $.fancybox.open({
 				// 	src: '#modal-thanks',
 				// 	type: 'inline'
 				// }); 
+				window.location.replace("https://quasabra.com/thanks.html");
 				console.log('ok')
 	
 				setTimeout(function () {

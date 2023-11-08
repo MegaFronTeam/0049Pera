@@ -46,6 +46,29 @@ mixin page-head(t,...items)
 
 			h1= t
 
+mixin page-head-with-links(titleSpan, title, footer, customClass)
+	+b.page-head-with-links.section
+		.container
+			+e.row.row(data-aos="fade-up" class=customClass)
+				.col-lg-8
+					span!= titleSpan
+					h1!= title
+					if footer
+						+e.footer Your message has been sent successfully. We&nbsp;typically reply within 30&nbsp;min!
+						+e.btn.btn.btn-outline-light(href='/') Back to home
+				.col-lg-4
+					span How about ping us?
+					+e.email.h4(href='mailto:hello@quasabra.com') hello@quasabra.com
+					+e.inner-row
+						.row
+							.col-6: a(href='#') Behance
+							.col-6: a(href='#') Whatsapp
+							.col-6: a(href='#') Dprofile
+							.col-6: a(href='#') Telegram
+							.col-6: a(href='#') Awwwards
+							.col-6
+							.col-6: a(href='#') Dribbble
+
 mixin parts(elem)
 	script.
 		addBlock(`#{elem}`)
