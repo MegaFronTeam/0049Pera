@@ -62,11 +62,11 @@ $html = '
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> price:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['price'] . '</b></td>';
     }
     
-    if (!empty($_POST['task-text'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> the task:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['task-text'] . '</b></td>';
+    if (!empty($_POST['taskText'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> the task:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['taskText'] . '</b></td>';
     }
-    if (!empty($_POST['type-service'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> Service:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . implode(", ",$_POST['type-service']) . '</b></td></tr>';
+    if (!empty($_POST['typeService'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> Service:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' .  $_POST['typeService'] . '</b></td></tr>';
     }
 
     if (!empty($_POST['utm_source'])) {

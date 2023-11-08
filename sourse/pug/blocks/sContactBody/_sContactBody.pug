@@ -21,12 +21,12 @@ mixin sContactBody(data)
 						+e.wrap--inputs#inputs
 							+e.title Services
 							+e.services-wrap
-								+in-c('checkbox', 'Websites', 'type-service[]').custom-input--type(value="Websites")
-								+in-c('checkbox', 'Clients for business', 'type-service[]').custom-input--type(value="Clients")
-								+in-c('checkbox', 'Design', 'type-service[]').custom-input--type(value="Design")
-								+in-c('checkbox', 'Digital', 'type-service[]').custom-input--type(value="Digital")
-								+in-c('checkbox', 'Promotion', 'type-service[]').custom-input--type(value="Promotion")
-								+in-c('checkbox', 'Sales', 'type-service[]').custom-input--type(value="Sales")
+								+in-c('checkbox', 'Websites', 'typeService').custom-input--type(value="Websites")
+								+in-c('checkbox', 'Clients for business', 'typeService').custom-input--type(value="Clients")
+								+in-c('checkbox', 'Design', 'typeService').custom-input--type(value="Design")
+								+in-c('checkbox', 'Digital', 'typeService').custom-input--type(value="Digital")
+								+in-c('checkbox', 'Promotion', 'typeService').custom-input--type(value="Promotion")
+								+in-c('checkbox', 'Sales', 'typeService').custom-input--type(value="Sales")
 						+e.wrap#price
 							+e.title Budget
 							+e.input-row.row
@@ -38,7 +38,7 @@ mixin sContactBody(data)
 								+e.col.col-6: +in-c('radio', 'To be discussed', 'price')
 						+e.wrap--file#text
 							+e.title Tell about your task
-							+input('Write the task', 'text','task-text')
+							+input('Write the task', 'text','taskText')
 							+upload-field
 							+e.example(href='#') Example of a brief
 						+e.wrap

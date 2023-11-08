@@ -173,49 +173,39 @@ class JSCCommon {
 			return b;
 		})();
 
-		const th = $('form');
-		const formInpus = {}
-		formInpus.name = th.find('[name="name"]').val() || '';
-		formInpus.email = th.find('[name="email"]').val() || '';
-		formInpus.tel = th.find('[name="tel"]').val() ;
-		formInpus.organization = th.find('[name="organization"]').val() ;
-
-		formInpus.utm_source = decodeURIComponent(gets['utm_source'] || '');
-		formInpus.utm_term = decodeURIComponent(gets['utm_term'] || '');
-		formInpus.utm_medium = decodeURIComponent(gets['utm_medium'] || '');
-		formInpus.utm_campaign = decodeURIComponent(gets['utm_campaign'] || '');
-
-		formInpus.file = th.find('[name="file"]').prop('files')[0]
-		
-		var data = new FormData($('form')[0]); 
-
-		for (const key in formInpus) {
-			if (Object.hasOwnProperty.call(object, key)) {
-				const element = object[key];
-				
-				data.append(`${key}`, object[key]);
-			}
-		}
-
-		console.log(formInpus)
 		$("form").submit(function (e) {
 			e.preventDefault();
+			const th = $(this);
+			const formInpus = {}
+			formInpus.name = th.find('[name="name"]').val() || '';
+			formInpus.email = th.find('[name="email"]').val() || '';
+			formInpus.tel = th.find('[name="tel"]').val() ;
+			formInpus.typeService = '';
+			th.find('[name="typeService"]').each(function(){
+				formInpus.typeService += $(this).val() + ', ' 
+			}) || '';
+			formInpus.price = th.find('[name="price"]').val() ;
+			formInpus.taskText = th.find('[name="taskText"]').val() ;
+			formInpus.file = th.find('[name="file"]').prop('files')[0]
 	
-			// data.append('email', email);
-			// // if (tel ) {
+			formInpus.utm_source = decodeURIComponent(gets['utm_source'] || '');
+			formInpus.utm_term = decodeURIComponent(gets['utm_term'] || '');
+			formInpus.utm_medium = decodeURIComponent(gets['utm_medium'] || '');
+			formInpus.utm_campaign = decodeURIComponent(gets['utm_campaign'] || '');
 	
-			// // 	data.append('organization', organization);
-			// // 	data.append('tel', tel);
-			// // }
-			// // else {
-			// // 	var file = th.find('[name="file"]').prop('files')[0]
-			// // 	data.append('file', file);
-			// // }
-			// data.append('utm_source', utm_source);
-			// data.append('utm_term', utm_term);
-			// data.append('utm_medium', utm_medium);
-			// data.append('utm_campaign', utm_campaign); 
+			
+			var data = new FormData(th[0]); 
 	
+			for (const key in formInpus) {
+				if (Object.hasOwnProperty.call(formInpus, key)) {
+					const element = formInpus[key];
+					
+					data.append(`${key}`, element);
+					console.log(`${key}`, element)
+				}
+			}
+	
+			console.log(data) 
 			$.ajax({
 				url: 'action.php',
 				dataType: 'text',  // what to expect back from the PHP script, if anything
@@ -226,6 +216,8 @@ class JSCCommon {
 				data: data,
 			}).done(function (data) {
  
+				Fancybox.close();
+				Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
 				// $.fancybox.open({
 				// 	src: '#modal-thanks',
 				// 	type: 'inline'
