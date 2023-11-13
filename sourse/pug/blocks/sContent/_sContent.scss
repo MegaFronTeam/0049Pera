@@ -10,17 +10,58 @@
 		--bs-gutter-y: var(--bs-gutter-x);
 
 	}
-	.section-title{
-		
+	&__nav {
+    list-style-type: none;
+    margin-bottom: 0;
+    padding: rem(80) rem(40) rem(80) 0;
+		li:not(:last-child) {
+			margin-bottom: rem(10);
+		}
+		a {
+			font-size: 1.4;
+			color: $gray-500;
+			font-size: rem(20);
+			@include media-breakpoint-up(xl) {
+				font-size: rem(36);
+			}
+			&:hover, &.active {
+				color: #fff;
+			}
+		}
+		a {
+			max-width: max-content;
+			&:after {
+				content: unset;
+			}
+		}
 	}
-	&__col{
-
+	&__wrap {
+		margin-bottom: rem(40);
+		a {
+			display: inline;
+			max-width: max-content;
+			overflow: hidden;
+			// &:after {
+			// 	content: unset;
+			// }
+			&.active {
+				color: $primary;
+				&:after {
+					background-color: $primary;
+				}
+			}
+		}
 	}
-	&__item{
-
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: rem(40);
 	}
-	&__slide{
-		height: auto;
+	p {
+		color: rgba(255, 255, 255, 0.50);
+	}
+	&__company {
+		p {
+			font-size: rem(20);
+		}
 	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

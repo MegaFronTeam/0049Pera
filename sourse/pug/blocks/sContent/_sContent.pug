@@ -1,9 +1,42 @@
 mixin sContent()
 	// start sContent
 	+b.SECTION.sContent.section#sContent&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 sContent
-				
+		.container(data-aos="fade-up")
 			+e.row.row
+				+e.col.col-lg-6.d-none.d-lg-block.sticky-wrap
+					.sticky-content
+						+e.UL.nav
+							li: a.active(href="#privacy") Privacy & cookie policy 
+							li: a(href="#welcome") Welcome
+							li: a(href="#cookies") What Are Cookies?
+							li: a(href="#reason") Why do we use cookies?
+							li: a(href="#reject") How do I reject or delete cookies?
+				.col-lg-6
+					.hrefs-js
+						+e.wrap#privacy
+							h2 Privacy & cookie policy
+							+e.company
+								p This website is owned and maintained by:
+								p Base Creative Consultants Company Ltd (“BaseCreate”)<br>	 15/F The Hennessy,<br> 256 Hennessy Road<br> Wan Chai, Hong Kong SAR
+						+e.wrap#welcome
+							h3 Welcome
+							p This website collects certain information via cookies and other online technologies. We care about your privacy and the information you share with us, and want you to understand how we are using and protecting the information we collect about you. BaseCreate is respectful of data privacy and adopts best practices in compliance with applicable privacy law and regulations, including the Personal Data (Privacy) Ordinance (Cap. 486) of the Laws of Hong Kong SAR, and the European Union’s General Data Protection Regulation (“GDPR”).
+							p This Cookie Policy, as well as our Privacy Policy, describes BaseCreate’s policies and practices regarding its use of information collected on this website and sets out your privacy rights.
+							p By using this website and consenting to this Cookie Policy, you agree that BaseCreate can place cookies as we describe below, and you agree to the collection, sharing, and use of your Personal Data for the personalization of advertising or other services.
+						+e.wrap#cookies
+							h4 What Are Cookies?
+							p Cookies are tiny text files that can be stored by your browser on your Internet-enabled device – computer, tablet or smartphone (“device”) – when you visit a website, subject to your consent. Some are session cookies, used only in the current browser session, while others are persistent cookies, which remain on your device and can be read again on subsequent visits to the website. This allows the website to "remember" your actions or preferences over time, for example, to log you in again on a subsequent visit.
+							p A cookie will typically contain the name of the originating domain, the lifetime of the cookie (i.e. how long it will remain on your device), and a value, which is usually a randomly generated unique number.
+							p Technologies from third-party providers which we integrate on our websites may set cookies on your device. These cookies identify you as a unique user by means of a tracking ID. The cookie itself is anonymous and does not contain any Personal Data, except when such information has been supplied by you, such as when you provide your name and email address when completing a registration form.
+						+e.wrap#reason
+							h5 Why do we use cookies?
+							p Cookies improve your experience. We use cookies to learn how you interact with our content and to improve your experience when visiting our website. Through their use, we can help you access and navigate this website faster and more efficiently, and receive more personalized service from us. Cookies allow us to distinguish you from other users so that we can recognize you and “remember” your preferences each time you visit.
+							p Cookies also allow us to compile aggregated statistics that allow us to understand how people use the website and to help us improve the structure and content. By storing user preferences, they help us provide you with a positive experience when you browse this website, including enabling you to personalize website settings. We may also collect web viewing data to ensure that you are seeing the most relevant content.
+						+e.wrap#reject
+							h6 How do I reject or delete cookies?
+							p Most internet browsers are initially set up to automatically support cookies. However, you can change your browser settings to decline all cookies, certain types of cookies, or specific cookies. You can also set your browser to alert you and request permission when cookies are being sent to your device. Further, you can delete stored cookies at any time. If you use different devices to view and access our website, you may need to ensure that each browser on each device is adjusted to suit your cookie preferences.
+							p On entering our website, you will be offered a choice of whether to accept or reject associated cookies. If you refuse to accept cookies from us, you will still be able to visit our website, but some of the functions may not work correctly. By using our website without deleting or rejecting some or all cookies, you will be deemed to consent to the placement of cookies on any device used to access our site.
+						+e.wrap
+							h6 Where can I get more information?
+							p Find out more about the use of cookies, including how to see what cookies have been set and how to switch off cookies at #[a(href="www.allaboutcookies.org") www.allaboutcookies.org] or #[a(href=" www.aboutcookies.org" class="active") www.aboutcookies.org].
 	// end sContent

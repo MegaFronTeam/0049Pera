@@ -429,7 +429,7 @@ a {
 	overflow: hidden;
 	&:hover {
 		&:after {
-			transform: translateX(0);
+			transform: scaleX(100%);
 		}
 	}
 	&:after {
@@ -442,7 +442,8 @@ a {
 		left: 0;
 		bottom: 0;
 		background-color: #fff;
-		transform: translateX(-102%);
+		transform: scaleX(0);
+		transform-origin: left;
 	}
 }
 

@@ -38,13 +38,17 @@ mixin search()
 			button 
 				+icon("search")
 
-mixin page-head(t,...items)
-	+b.page-head
-		- let l = items.length
+mixin page-head(titleSpan, title, customClass)
+	+b.page-head.section
 		.container
-			+breadcrumb('Главная',...items)
+			+e.row(data-aos="fade-up" class=customClass)
+				span!= titleSpan
+				h1!= title
+		//- - let l = items.length
+		//- .container
+		//- 	+breadcrumb('Главная',...items)
 
-			h1= t
+		//- 	h1= t
 
 mixin page-head-with-links(titleSpan, title, footer, customClass)
 	+b.page-head-with-links.section
@@ -68,6 +72,14 @@ mixin page-head-with-links(titleSpan, title, footer, customClass)
 							.col-6: a(href='#' target='_blank') Awwwards
 							.col-6
 							.col-6: a(href='#' target='_blank') Dribbble
+
+mixin page-head-privacy(titleSpan, title, customClass)
+	+b.page-head-with-links--privacy.section
+		.container
+			+e.row.row(data-aos="fade-up" class=customClass)
+				.col
+					span!= titleSpan
+					h1!= title
 
 mixin parts(elem)
 	script.
