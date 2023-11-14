@@ -1,0 +1,31 @@
+mixin sReviews(data)
+	// start sReviews
+	+b.sReviews.section#sReviews&attributes(attributes)
+		.container
+			+e.row.row
+				.col-xl-3
+					+e.title Reviews
+				.col-xl
+					+e.slider--js.splide
+						.splide__arrows.splide__arrows--ltr.d-none.d-md-flex
+							button.splide__arrow.splide__arrow--prev(type='button' aria-label='Previous slide' aria-controls='splide01-track')
+								+icon('chevron-left')
+							button.splide__arrow.splide__arrow--next(type='button' aria-label='Next slide' aria-controls='splide01-track')
+								+icon('chevron-right')
+						.splide__track
+							.splide__list
+								- for(let i = 0; i < 5; i++)
+									+e.slide.splide__slide
+										+e.head
+											+e.img-wrap: +img('img/svg/asogo.svg').res-i
+											div
+												+e.name Asogo
+												+e.text Association of&nbsp;Construction Organizations of&nbsp;the Gas Industry
+										p We&nbsp;worked with a&nbsp;designer from Red Collar for two months. They have quickly delved into our processes, got a&nbsp;sense of&nbsp;the tool set and integrated into the team. They were independent in&nbsp;carrying out the assigned tasks and bringing them up&nbsp;for discussion, gradually going through iterations and perfecting their designs. It&nbsp;was a&nbsp;pleasure to&nbsp;work together. Next time we&nbsp;are in&nbsp;need of&nbsp;design help, I&rsquo;ll be&nbsp;happy to&nbsp;employ Red Collar&rsquo;s services.
+					+e.wrap
+						+e.pdf(href='#' target='_blank') PDF
+						+e.slides
+							span.current 1
+							span.line
+							span.all-slides 1
+	// end sReviews

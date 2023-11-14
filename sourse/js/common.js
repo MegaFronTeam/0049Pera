@@ -225,6 +225,38 @@ function eventHandler() {
 			})
 		})
 	}; 
+
+	let sReviewsSlider = document.querySelector('.sReviews__slider--js');
+
+	if(sReviewsSlider) {
+		const sReviewsSplide = new Splide(sReviewsSlider, {
+			gap: 48,
+			pagination: false,
+			autoWidth: true,
+		}).mount();
+
+		let arrowWrap = sReviewsSplide.Components.Elements.arrows.classList;
+		let arrowPrev = sReviewsSplide.Components.Arrows.arrows.prev;
+		let arrowNext = sReviewsSplide.Components.Arrows.arrows.next;
+
+		function animateArrow(el, addedClass) {
+			el.addEventListener('mouseover', () => {
+				arrowWrap.add(addedClass);
+			}, { passive: true });
+			el.addEventListener('mouseout', () => {
+				arrowWrap.remove(addedClass);
+			}, { passive: true });
+		}
+		animateArrow(arrowPrev, 'l-hover');
+		animateArrow(arrowNext, 'r-hover');
+
+		// console.log(sReviewsSplide.Components.Elements.slides.length);
+		document.querySelector('.sReviews__slides .all-slides').innerHTML = sReviewsSplide.Components.Controller.getEnd() + 1;
+		sReviewsSplide.on( 'mounted move', function () {
+			document.querySelector('.sReviews__slides .current').innerHTML = sReviewsSplide.index + 1;
+		} );
+	}
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
