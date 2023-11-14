@@ -634,7 +634,7 @@ h6, .h6 {
 .cursor-js {
 	will-change: transform;
 	position: fixed;
-	overflow: hidden;
+	// overflow: hidden;
 	width: 10px;
 	height: 10px;
 	left: 0;
@@ -646,12 +646,31 @@ h6, .h6 {
 	@include media-breakpoint-up(lg) {
 		display: block;
 	}
+	&.hovered {
+		.cursor-border {
+			transform: scale(12);
+		}
+		.text {
+			opacity: 1;
+			transform: translate(-34px, -14px) scale(1);
+		}
+	}
 	.cursor-border {
+		@include mt;
 		height: rem(10);
     width: rem(10);
 		background-color: $orange;
     border-radius: 50%;
 		pointer-events: none;
+	}
+	.text {
+		@include mt;
+		pointer-events: none;
+		opacity: 0;
+		line-height: 1.25;
+		font-size: rem(16);
+		transform: translate(-34px, -14px) scale(0);
+		transform-origin: left;
 	}
 }
 

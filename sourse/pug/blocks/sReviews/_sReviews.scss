@@ -107,6 +107,11 @@
 				overflow: hidden;
 			}
 		}
+		&__list {
+			// transition-duration: 0.384615s !important;
+			// transition-delay: 0.1s !important;
+			// transition-timing-function: cubic-bezier(0.43, -0.34, 0.7, 1.07)!important;
+		}
 		&__slide {
 			width: 83%;
 			@include media-breakpoint-up(md) {

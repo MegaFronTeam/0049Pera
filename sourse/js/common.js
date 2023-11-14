@@ -257,6 +257,18 @@ function eventHandler() {
 		} );
 	}
 
+	let sOurworkItems = document.querySelectorAll('.sOurwork__item');
+	if (sOurworkItems.length > 0) {
+		sOurworkItems.forEach((sOurworkItem) => {
+			sOurworkItem.addEventListener('mouseover', () => {
+				document.querySelector('.cursor-js').classList.add('hovered');
+			}, { passive: true });
+			sOurworkItem.addEventListener('mouseout', () => {
+				document.querySelector('.cursor-js').classList.remove('hovered');
+			}, { passive: true });
+		})
+	}
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
