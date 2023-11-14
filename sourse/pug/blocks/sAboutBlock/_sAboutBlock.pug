@@ -1,0 +1,22 @@
+mixin sAboutBlock(data)
+	// start sAboutBlock
+	+b.SECTION.sAboutBlock.section#sAboutBlock&attributes(attributes)
+		.container
+			+e.row.row
+				.col-lg-6.order-2.order-lg-1
+					+e.img-wrap(data-aos="fade-up"): +img('img/title-img-3.jpg', 'bg')
+				.col-lg-6.order-1.order-lg-2
+					span(data-aos="fade-up") About
+					.h4(data-aos="fade-up") We&nbsp;are a&nbsp;creative agency working with brands&nbsp;&mdash; building insightful strategy, creating unique designs and crafting experiences that bring positive change and value
+				.col-lg-6.order-3.d-flex.flex-column
+					+e.name(data-aos="fade-up") Alexandr Misunov
+					+e.status(data-aos="fade-up") CEO
+				.col-lg-6.order-4(data-aos="fade-up")
+					+e.inner-row
+						.row
+							.col
+								+e.years 7+
+							.col-auto
+								+e.text Years<br>of experience
+					+e.btn.btn.btn-primary(href='#') Discover
+	// end sAboutBlock

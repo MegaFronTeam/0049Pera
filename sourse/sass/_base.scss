@@ -702,3 +702,17 @@ h6, .h6 {
 		@include mt;
 	}
 }
+
+.btn-primary {
+	--bs-btn-color: #fff;
+
+	--bs-btn-hover-color: #fff;
+	--bs-btn-hover-border-color: #{$primary};
+	--bs-btn-hover-bg: #{$body-bg};
+
+	--bs-btn-active-color: #fff;
+	--bs-btn-active-border-color: #{$primary};
+	--bs-btn-active-bg: #{$body-bg};
+
+	--bs-btn-disabled-color: #fff;
+}
