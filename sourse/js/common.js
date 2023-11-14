@@ -224,7 +224,7 @@ function eventHandler() {
 				offsetTop: offsetTopSection,
 			})
 		})
-	}
+	}; 
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

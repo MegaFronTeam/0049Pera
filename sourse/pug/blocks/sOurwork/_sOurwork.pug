@@ -1,0 +1,13 @@
+mixin sOurwork(data)
+	// start sOurwork
+	+b.sOurwork.section#sOurwork&attributes(attributes)
+		.container
+			mixin item(img, text)
+				+e.item(href='#')#sOurwork&attributes(attributes)
+					+img(`img/${img}`, 'bg')
+					span!=text
+			+e.row.row
+				.col-lg-6: +item('sOurwork-img-1.png', 'MIGFLAT')
+				.col-lg-6: +item('sOurwork-img-2.png', 'Obnulenie dolgov')
+				.col-lg-6: +item('sOurwork-img-3.png', 'Naves na zakaz')
+	// end sOurwork

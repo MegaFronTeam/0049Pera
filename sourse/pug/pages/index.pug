@@ -5,9 +5,11 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/sContent/_sContent.pug
  
 include ../blocks/sContact/_sContact.pug
-include ../blocks/sForm/_sForm.pug
-include ../blocks/sForm/_sForm.pug
-include ../blocks/sCatalog/_sCatalog.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sForm/_sForm.pug
+//- include ../blocks/sCatalog/_sCatalog.pug
+
+include ../blocks/sOurwork/_sOurwork.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -23,6 +25,7 @@ block pagecontent
 	//- +parts('header')
 	main
 		+headerBlock
+		+sOurwork
 		+sContact
 	+parts('footer')
       

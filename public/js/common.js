@@ -224,7 +224,28 @@ function eventHandler() {
 				offsetTop: offsetTopSection,
 			})
 		})
+	};
+
+	function solution(number) {
+		if (number <= 0) return 'Not the natural number'; 
+		let neededNum = number - 1;
+		let numberList = [];
+		let result = 0;
+		while (neededNum > 0) {
+			if (neededNum % 3 == 0 || neededNum % 5 == 0) {
+				numberList.push(neededNum);
+			}
+			neededNum--;
+		}
+		console.log(numberList);
+		numberList.forEach((num) => {
+			result += num;
+			console.log(result);
+		});
+		return result;
 	}
+
+	console.log(solution(10));
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
