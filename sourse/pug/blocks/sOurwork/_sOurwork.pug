@@ -7,7 +7,10 @@ mixin sOurwork(data)
 					+img(`img/${img}`, 'bg')
 					span!=text
 			+e.row.row
-				.col-lg-6: +item('sOurwork-img-1.png', 'MIGFLAT')
-				.col-lg-6: +item('sOurwork-img-2.png', 'Obnulenie dolgov')
-				.col-lg-6: +item('sOurwork-img-3.png', 'Naves na zakaz')
+				+e.col.col-lg-6: +item('sOurwork-img-1.png', 'MIGFLAT')
+				+e.col.col-lg-6: +item('sOurwork-img-2.png', 'Obnulenie dolgov')
+				+e.col.col-lg-6: +item('sOurwork-img-3.png', 'Naves na zakaz')
+				+e.col.col-lg-6
+				+e.col.col-lg-6: +item('sOurwork-img-4.png', 'Dzanshin')
+				+e.col.col-lg-6: +item('sOurwork-img-5.png', 'Asogo')
 	// end sOurwork
