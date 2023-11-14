@@ -204,20 +204,20 @@ function eventHandler() {
 					status.offset.y >= (section.offsetTop - offsetTopSection) &&
 					status.offset.y < (section.offsetTop + section.offsetHeight - offsetTopSection)
 					) {
-						document.querySelector(".sContactBody__nav a.active").classList.remove("active")
+						document.querySelector(".nav-js a.active").classList.remove("active")
 						document.querySelector(`[href="#${section.id}"]`).classList.add("active")
 					}
 					
 				}
 			}
 			if (status.offset.y == bodyScrollBar.limit.y) {
-				document.querySelector(".sContactBody__nav a.active").classList.remove("active")
-				document.querySelector(`.sContactBody__nav li:last-child a`).classList.add("active")
+				document.querySelector(".nav-js a.active").classList.remove("active")
+				document.querySelector(`.nav-js li:last-child a`).classList.add("active")
 			}
 		})
 		
 		document.addEventListener('click', (e) => {
-			const targetEl = e.target.closest('.sContactBody__nav a')
+			const targetEl = e.target.closest('.nav-js a')
 			if (!targetEl) return;
 			const id = targetEl.hash;
 			bodyScrollBar.scrollIntoView(document.querySelector(id), {
