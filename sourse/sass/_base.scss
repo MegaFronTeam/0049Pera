@@ -735,3 +735,12 @@ h6, .h6 {
 
 	--bs-btn-disabled-color: #fff;
 }
+
+.dd-group {
+	&__head {
+		cursor: pointer;
+	}
+	&__content {
+		display: none;
+	}
+}

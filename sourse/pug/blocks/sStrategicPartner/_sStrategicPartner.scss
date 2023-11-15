@@ -11,8 +11,9 @@
 	&__row{
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
-		// --bs-gutter-y: #{rem()};
 
+		min-height: rem(350);
+		position: relative;
 	}
 	.section-title{
 		&__row{
@@ -37,13 +38,101 @@
 			}
 		}
 	}
-	&__col{
-		
+	.dd-group {
+		&__item {
+			&:hover {
+				.img {
+					opacity: 1;
+				}
+			}
+		}
+		&__item {
+			border-bottom: 1px solid $gray-700;
+			&.active {
+				.dd-group__plus {
+					width: rem(30);
+					transform: translateY(-50%) rotateZ(45deg);
+				}
+				// .img {
+				// 	opacity: 1;
+				// }
+			}
+		}
+		&__head {
+			position: relative;
+			padding: rem(23) rem(60) rem(23) 0;
+			&:hover {
+				span {
+					transform: translateX(rem(20));
+				}
+				.dd-group__plus {
+					width: rem(30);
+					background-color: $primary;
+				}
+				&:before {
+					opacity: 1;
+				}
+				// & ~ .img {
+				// 	opacity: 1;
+				// }
+			}
+			span {
+				display: block;
+				@include mt;
+				font-size: rem(18);
+				@include media-breakpoint-up(lg) {
+					font-size: rem(20);
+				}
+			}
+			&:before {
+				@include mt;
+				content: '';
+				position: absolute;
+				display: block;
+				left: rem(3);
+				top: 50%;
+				transform: translateY(-50%);
+				width: rem(4);
+				height: rem(4);
+				border-radius: 50%;
+				background-color: $primary;
+				opacity: 0;
+			}
+		}
+		&__content {
+			padding-bottom: rem(23);
+		}
+		&__plus {
+			@include mt;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 0;
+			width: rem(60);
+			padding: rem(9);
+			border-radius: 60px;
+			background-color: $gray-700;
+			.icon {
+				font-size: rem(12);
+			}
+		}
+		.img {
+			@include mt;
+			display: none;
+			position: absolute;
+			width: 100%;
+			max-width: rem(237);
+			left: 0;
+			bottom: 0;
+			opacity: 0;
+			@include media-breakpoint-up(lg) {
+				display: block;
+			}
+		}
 	}
-	&__item{
-		
-	}
-
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

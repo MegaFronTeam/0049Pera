@@ -2,7 +2,7 @@ mixin sStrategicPartner(data)
 	// start sStrategicPartner
 	+b.SECTION.sStrategicPartner.section#sStrategicPartner&attributes(attributes)
 		.container
-			+b.section-title
+			+b.section-title(data-aos="fade-up")
 				+e.row.row
 					.col-lg.col-xxl-8
 						.h3 #[span We&nbsp;are a&nbsp;strategic partner to&nbsp;our clients.] We&nbsp;will help you to&nbsp;ideate, design and implement your product from conception to&nbsp;iterative development support, always taking the initiative and working proactively
@@ -10,4 +10,17 @@ mixin sStrategicPartner(data)
 						+e.headline Capabilities
 			+e.row.row
 				.col-lg-6.ms-auto
+					+ddGroup
+						mixin item(txt, icon)
+							+e.item(class=activeClasses data-aos="fade-up")
+								+e.head.dd-head-js
+									span!=txt
+									+e.plus: +icon('plus')
+								+e.content.dd-content-js(class=activeClasses) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus facilis saepe, in quisquam eum, accusantium incidunt ullam accusamus distinctio ea, architecto error? Necessitatibus, quasi neque. Quisquam dolorem temporibus tempore reiciendis quidem, dicta ea iste ab commodi tenetur. Neque, aspernatur nesciunt veritatis fugiat quos maxime, deleniti vel eveniet vitae architecto iusto.
+								+img(`img/svg/sStrategicPartner-icon-${icon}.svg`).img
+						+item('Websites', 1)
+						+item('Design', 2)
+						+item('Digital', 3)
+						+item('Promotion', 4)
+						+item('Sales', 5)
 	// end sStrategicPartner
