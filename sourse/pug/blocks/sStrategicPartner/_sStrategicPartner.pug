@@ -12,11 +12,11 @@ mixin sStrategicPartner(data)
 				.col-lg-6.ms-auto
 					+ddGroup
 						mixin item(txt, icon)
-							+e.item(class=activeClasses data-aos="fade-up")
-								+e.head.dd-head-js
+							+e.item
+								+e.head(data-aos="fade-up").dd-head-js
 									span!=txt
 									+e.plus: +icon('plus')
-								+e.content.dd-content-js(class=activeClasses) Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus facilis saepe, in quisquam eum, accusantium incidunt ullam accusamus distinctio ea, architecto error? Necessitatibus, quasi neque. Quisquam dolorem temporibus tempore reiciendis quidem, dicta ea iste ab commodi tenetur. Neque, aspernatur nesciunt veritatis fugiat quos maxime, deleniti vel eveniet vitae architecto iusto.
+								+e.content.dd-content-js(class=activeClasses data-aos="fade-up") Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus facilis saepe, in quisquam eum, accusantium incidunt ullam accusamus distinctio ea, architecto error? Necessitatibus, quasi neque. Quisquam dolorem temporibus tempore reiciendis quidem, dicta ea iste ab commodi tenetur. Neque, aspernatur nesciunt veritatis fugiat quos maxime, deleniti vel eveniet vitae architecto iusto.
 								+img(`img/svg/sStrategicPartner-icon-${icon}.svg`).img
 						+item('Websites', 1)
 						+item('Design', 2)
