@@ -1,7 +1,7 @@
 {
 	"nav":[
 		{ "name":"Home", "url":"/"},
-		{"name":"Contact", "url":"/contact.html"} 
+		{"name":"Contact", "url":"/contact"} 
 	],
 	"social":[
 		"fb","instagram","telegram"
