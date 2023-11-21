@@ -58,11 +58,13 @@
 		}
 	}
 	p {
-		max-width: rem(257);
+		max-width: rem(247);
 		font-size: rem(18);
 		margin-bottom: 0;
 		line-height: 1.2;
-		margin-left: auto;
+		@include media-breakpoint-up(md) {
+			margin-left: auto;
+		}
 		@include media-breakpoint-up(lg) {
 			font-size: rem(20);
 		}

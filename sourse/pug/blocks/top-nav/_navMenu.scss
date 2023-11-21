@@ -155,6 +155,9 @@
 			position: relative;
 			padding-bottom: rem(36);
 			margin-bottom: rem(36);
+			flex-direction: column;
+			margin-left: 0;
+			margin-right: 0;
 			&:after {
 				content: '';
 				position: absolute;

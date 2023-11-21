@@ -24,13 +24,14 @@ mixin top-nav()
 			+e.row.row
 				.col
 					+e.logo(href='/'): +img('img/svg/logo.svg')
-				.col-auto
+				.col-auto.d-none.d-lg-block
 					+mnu()
-					//- .menu-mobile.menu-mobile--js
+					//- .menu-mobile.menu-mobile--js.d-lg-none
 					//- 	.menu-mobile__inner
-					//- 		+menu-toggle()
+					//- 		+mnu()
+							//- +menu-toggle()
 				//- .col-auto.d-none.d-lg-block
 				//- 	+e.theme-changer(href='#') Dark
-				//- .col-auto.d-lg-none.ms-auto
-				//- 	+menu-toggle()
+				.col-auto.d-lg-none.ms-auto
+					+menu-toggle()
 	// end top-nav

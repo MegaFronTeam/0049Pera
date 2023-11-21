@@ -3,7 +3,7 @@ mixin sOurwork(data)
 	+b.sOurwork.section#sOurwork&attributes(attributes)
 		.container
 			mixin item(img, text)
-				+e.item(href='#')#sOurwork&attributes(attributes)
+				+e.item(href='#' data-aos="fade-up")#sOurwork&attributes(attributes)
 					+img(`img/${img}`, 'bg')
 					span!=text
 			+e.row.row

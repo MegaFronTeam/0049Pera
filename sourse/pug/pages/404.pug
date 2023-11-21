@@ -8,14 +8,14 @@ include ../blocks/sContact/_sContact.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sForm/_sForm.pug
 //- include ../blocks/sContactHead/_sContactHead.pug
-include ../blocks/sContactBody/_sContactBody.pug
+//- include ../blocks/sContactBody/_sContactBody.pug
 
 block variables
 	- let  mainPage= 'main-page' 
 	- let  bg= 'main.jpg'
 
 block title
-	- let  title= "Contact"
+	- let  title= "Error 404"
 	title= title
 block pagecontent
 	//- +mob-mnu()
@@ -24,8 +24,8 @@ block pagecontent
 	//- +parts('header')
 	main
 		//- +sContactHead
-		+page-head-with-links('Contact', 'LET&rsquo;S WORK TOGETHER', 'Your message has been sent successfully. We&nbsp;typically reply within 30&nbsp;min!', 'align-items-center')
-		+sContactBody
+		+page-head-with-links('404', 'Error 404', 'We broke the internet. The requested page could not be found.')
+		//- +sContactBody
 	+parts('footer')
       
 

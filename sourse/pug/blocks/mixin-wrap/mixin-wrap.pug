@@ -58,7 +58,7 @@ mixin page-head-with-links(titleSpan, title, footer, customClass)
 					span!= titleSpan
 					h1!= title
 					if footer
-						+e.footer Your message has been sent successfully. We&nbsp;typically reply within 30&nbsp;min!
+						+e.footer!= footer
 						+e.btn.btn.btn-outline-light(href='/') Back to home
 				.col-lg-4
 					span How about ping us?
