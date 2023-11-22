@@ -127,9 +127,9 @@ function eventHandler() {
 		easing: 'easeOutQuart',
 	});
 
-	document.addEventListener('aos:in', ({ detail }) => {
-		console.log('animated in', detail);
-	});
+	// document.addEventListener('aos:in', ({ detail }) => {
+	// 	console.log('animated in', detail);
+	// });
 
 	function inputFile() {
 		if (document.querySelector('.upload-field')) {

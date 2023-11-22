@@ -201,11 +201,11 @@ class JSCCommon {
 					const element = formInpus[key];
 					
 					data.append(`${key}`, element);
-					console.log(`${key}`, element)
+					// console.log(`${key}`, element)
 				}
 			}
 	
-			console.log(data) 
+			// console.log(data) 
 			$.ajax({
 				url: 'action.php',
 				dataType: 'text',  // what to expect back from the PHP script, if anything
@@ -223,7 +223,7 @@ class JSCCommon {
 				// 	type: 'inline'
 				// }); 
 				window.location.replace("https://quasabra.com/thanks.html");
-				console.log('ok')
+				// console.log('ok')
 	
 				setTimeout(function () {
 					// Done Functions
@@ -369,7 +369,7 @@ class JSCCommon {
       document.addEventListener(
         'scroll',
         function () {
-					console.log(1232);
+					// console.log(1232);
           var current = '';
 
           sections.forEach((section) => {
